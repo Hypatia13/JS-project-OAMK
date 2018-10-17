@@ -1,44 +1,55 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { MovieListComponent } from './movies/movie-list/movie-list.component';
-import { LoginComponent } from './login/login.component';
-import { AdminComponent } from './admin/admin.component';
-import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { HowItWorksComponent } from './how-it-works/how-it-works.component';
-import { JumbotronComponent } from './jumbotron/jumbotron.component';
-import { MoviesComponent } from './movies/movies.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { AddMovieComponent } from './movies/add-movie/add-movie.component';
-import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { AddMovieComponent } from './components/movies/add-movie/add-movie.component';
+import { EditMovieComponent } from './components/movies/edit-movie/edit-movie.component';
+import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
+import { MoviesService } from './services/movies.service';
+import { FooterComponent } from './components/footer/footer.component';
+
+const appRoutes: Routes = [
+  { path:"", component:HomeComponent },
+  { path:"movies", component:MoviesComponent },
+  { path:"create", component:AddMovieComponent },
+  { path:"edit/:id", component:EditMovieComponent },
+  { path:"details/:id", component:MovieDetailsComponent },
+  { path:"contact", component:ContactComponent },
+  { path:"howitworks", component:HowItWorksComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    MovieDetailsComponent,
-    MovieListComponent,
-    LoginComponent,
-    AdminComponent,
-    ContactComponent,
-    FooterComponent,
     HomeComponent,
-    HowItWorksComponent,
+    NavbarComponent,
     JumbotronComponent,
     MoviesComponent,
-    NavbarComponent,
     AddMovieComponent,
-    EditMovieComponent
+    EditMovieComponent,
+    MovieDetailsComponent,
+    ContactComponent,
+    HowItWorksComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpModule,
+    FlashMessagesModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

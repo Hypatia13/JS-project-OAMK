@@ -10,11 +10,11 @@ import 'rxjs/add/operator/debounceTime';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent implements OnInit { 
 
-constructor(
-	private route: ActivatedRoute,
-	private router: Router,
+	constructor(
+	  private route: ActivatedRoute,
+	  private router: Router,
 	  private _ms: MoviesService
 	) {}
 
@@ -42,7 +42,7 @@ constructor(
 	    	}
 
 	    	this.loader = false;
-
+	  
 	    });
 
 

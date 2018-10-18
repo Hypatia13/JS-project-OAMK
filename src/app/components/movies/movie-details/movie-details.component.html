@@ -10,7 +10,7 @@
 
 
     <div class="content-padding clearfix">
-        <h1 class="myLoader" data-text="It's loading…" *ngIf="loader">It's loading…</h1>
+        <h1 data-text="Loading" *ngIf="loader">Loading</h1>
         <div *ngIf="movie">
             <div class="poster-wrapper">
                 <img src="/movies/{{movie?.poster}}" class="img-responsive">

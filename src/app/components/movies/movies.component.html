@@ -8,7 +8,7 @@
 </div>
 
 <div id="posters-wrapper" class="content-padding clearfix">
-  	<h1 class="myLoader" data-text="It's loading…" *ngIf="loader">It's loading…</h1>
+  	<h1 data-text="Loading" *ngIf="loader">Loading</h1>
   	<div class="poster" *ngFor="let movie of movies">
   		<a [routerLink]="[movie?._id]" routerLinkActive="active" (click)="getMovie( movie )">
 		  	<img src="/movies/{{movie?.poster}}" class="img-responsive">

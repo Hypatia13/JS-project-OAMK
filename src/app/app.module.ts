@@ -17,6 +17,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MoviesService } from './services/movies.service';
 import { FooterComponent } from './components/footer/footer.component';
 
+
 const appRoutes: Routes = [
   { path:"", component:HomeComponent },
   { path:"movies", component:MoviesComponent },

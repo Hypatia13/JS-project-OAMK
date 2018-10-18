@@ -11,7 +11,7 @@ ul li {
 }
 
 /* --------------------------
-General Styles 
+General Styles
 ----------------------------- */
 body {
 	font-family: 'Montserrat', sans-serif;
@@ -27,7 +27,7 @@ body {
 
 
 /* --------------------------
-Hero Image / Title Styles 
+Hero Image / Title Styles
 ----------------------------- */
 #hero-image {
 	height: 550px;
@@ -52,7 +52,8 @@ Hero Image / Title Styles
 
 #hero-image #hero-title {
 	position: absolute;
-	background-color: #fff;
+  background-color: #fff;
+  color: #333;
 	padding: 25px 60px;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -71,7 +72,7 @@ Hero Image / Title Styles
 
 
 /* ---------------------------------------
-Navbar and Navigation Styles / Overrides 
+Navbar and Navigation Styles / Overrides
 ------------------------------------------ */
 .navbar-fixed-top {
 	position: absolute;
@@ -115,7 +116,7 @@ Navbar and Navigation Styles / Overrides
 
 
 /* -----------------------------
-Home Page Posters Styles 
+Home Page Posters Styles
 -------------------------------- */
 
 #posters-wrapper {
@@ -132,7 +133,7 @@ Home Page Posters Styles
 /* Poster Overlay Styles */
 .poster-info-overlay {
 	position: absolute;
-	background: rgba(0,0,0,0.7);	
+	background: rgba(0,0,0,0.7);
 	bottom: 0;
 	left: 0;
 	opacity: 0;
@@ -154,7 +155,7 @@ Home Page Posters Styles
 	font-size: 11px;
 	letter-spacing: 0.3px;
 	color: #fff;
-	margin: 0px;	
+	margin: 0px;
 	margin-top: 15px;
 	}
 .poster:hover .poster-info-overlay {
@@ -166,7 +167,7 @@ Home Page Posters Styles
 
 
 /* -----------------------------
-Footer Styles 
+Footer Styles
 -------------------------------- */
 
 footer {
@@ -221,7 +222,7 @@ footer .social-media-icons a:first-child:hover i {
 /* -----------------------------
 
 
-Movie-Single Styles 
+Movie-Single Styles
 
 
 -------------------------------- */
@@ -232,7 +233,7 @@ Movie-Single Styles
 
 
 /* ---------------------------------------
-Movie-Single Hero Image and Title Styles 
+Movie-Single Hero Image and Title Styles
 ------------------------------------------ */
 
 #hero-image-single {
@@ -283,7 +284,7 @@ Movie-Single Hero Image and Title Styles
 
 
 /* ---------------------------------------
-Movie-Single Poster and Description Styles 
+Movie-Single Poster and Description Styles
 ------------------------------------------ */
 .poster-wrapper {
 	float: left;
@@ -407,7 +408,7 @@ Media Queries / Responsive Styles
 @media (max-width: 767px) {
 	#hero-image-single #hero-title, #hero-image-notFound #hero-title {
 		width: 75%;
-	}	
+	}
 }
 
 
@@ -424,7 +425,7 @@ Media Queries / Responsive Styles
 @media (max-width: 500px) {
 	#hero-image #hero-title  {
 		width: 65%;
-	}	
+	}
 }
 
 /* Move navigation to the left and prevent default styles on mobile devices */
@@ -440,7 +441,7 @@ Media Queries / Responsive Styles
 		margin-left: -100px;
 		background-color: rgba(0,0,0,0.5);
 	}
-	
+
 }
 
 /* Decrease font size and padding of poster overlay on mobile devices */

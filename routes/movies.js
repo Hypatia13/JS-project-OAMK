@@ -33,7 +33,7 @@ router.get('/movies', function( req, res, next ) {
 	.error( console.error );*/
 
   var query = Movie.find({ });
-
+  
   /*query.select('title description main_characters');
   query.skip(0);
   query.where('main_characters').in(['Yoda', 'talking']);
@@ -70,7 +70,7 @@ router.post('/movies/',  cpUpload, function( req, res, next ){
 	m.description = req.body.description;
 	m.poster = req.files.poster[0].filename;
 	m.hero_image = 'death_star_image.jpg';
-
+	
   //console.log(typeof req.body.actors)
   actors = req.body.actors.split(",");
    console.log(m);

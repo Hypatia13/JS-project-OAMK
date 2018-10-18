@@ -12,7 +12,4 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  linkedIn: string = "https://www.linkedin.com/in/ramandeep-bhagat-9b783161/";
-  github: string = "https://github.com/rdbhagat999";
-
 }

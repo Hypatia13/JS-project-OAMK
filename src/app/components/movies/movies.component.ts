@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit { 
 
 	constructor( private _ms:MoviesService, private router: Router ) {
 
@@ -22,11 +22,11 @@ export class MoviesComponent implements OnInit {
 
 		this.loader = true;
 
-		this._ms.getMovies().subscribe( ( data: any ) => {
+		this._ms.getMovies().subscribe( ( data: any ) => { 
 
 			if( data.success == true ){
 
-				console.log(data.movies);
+				console.log(data.movies); 
 				this.movies = data.movies;
 			}
 

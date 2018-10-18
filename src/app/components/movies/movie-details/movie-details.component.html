@@ -1,43 +1,43 @@
 <div ng-controller="SingleMovieController">
 
-  <div id="hero-image-single" style="background-image: url('/movies/death_star_image.jpg');">
-      <h1 id="hero-title">
-          {{movie?.title | uppercase}}
-          <a title="Edit Movie"><i class="glyphicon glyphicon-edit"></i></a>
-          <a title="Delete Movie"><i class="glyphicon glyphicon-remove"></i></a>
-          <p class="empty">{{status}}</p>
-      </h1>
-  </div>
+    <div id="hero-image-single" style="background-image: url('/movies/death_star_image.jpg');">
+        <h1 id="hero-title">
+            {{movie?.title | uppercase}} 
+            <a title="Edit Movie"><i class="glyphicon glyphicon-edit"></i></a>
+            <a title="Delete Movie"><i class="glyphicon glyphicon-remove"></i></a>
+            <p class="empty">{{status}}</p>
+        </h1>
+    </div>
 
 
-  <div class="content-padding clearfix">
+    <div class="content-padding clearfix">
 
-      <h1 class="myLoader" data-text="It's loading…" *ngIf="loader">It's loading…</h1>
+        <h1 class="myLoader" data-text="It's loading…" *ngIf="loader">It's loading…</h1>
 
-      <div *ngIf="movie">
+        <div *ngIf="movie">
+            
+            <div class="poster-wrapper">
+                <img src="/movies/{{movie?.poster}}" class="img-responsive">
+            </div>
 
-          <div class="poster-wrapper">
-              <img src="/movies/{{movie?.poster}}" class="img-responsive">
-          </div>
+            <div class="description-wrapper">
+                
+                <div class="description">
+                    <h2 class="movie-header">Description</h2>
+                    <p>{{movie?.description}}</p>
+                </div>
 
-          <div class="description-wrapper">
+                <div class="main-characters">
+                    <h2 class="movie-header">Main Characters</h2>
+                    <ul>
+                        <li *ngFor="let actor of movie?.main_characters">{{actor}}</li>
+                    </ul>
+                </div>
 
-              <div class="description">
-                  <h2 class="movie-header">Description</h2>
-                  <p>{{movie?.description}}</p>
-              </div>
+            </div>
 
-              <div class="main-characters">
-                  <h2 class="movie-header">Main Characters</h2>
-                  <ul>
-                      <li *ngFor="let actor of movie?.main_characters">{{actor}}</li>
-                  </ul>
-              </div>
+        </div>
 
-          </div>
-
-      </div>
-
-  </div>
+    </div>
 
 </div>

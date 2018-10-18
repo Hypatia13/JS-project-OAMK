@@ -12,35 +12,28 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class MovieDetailsComponent implements OnInit {
 
-	constructor(
-	  private route: ActivatedRoute,
-	  private router: Router,
-	  private _ms: MoviesService
-	) {}
+constructor(
+  private route: ActivatedRoute,
+  private router: Router,
+  private _ms: MoviesService
+) {}
 
-	movie: Movie;
-	loader: boolean = false;
-
-	ngOnInit() {
-
-		this.loader = true;
-
-	  this.route.params
-	    .switchMap((params: Params) => this._ms.getMovie(params['id']))
-	    .subscribe((data: any) => {
-
-	    	if( data.success == true ){
-	    		this.movie = data.movie;
-	    	}
-
-	    	this.loader = false;
-
-	    });
-
-
-	}
-
-
-
+movie: Movie;
+loader: boolean = false;
+ngOnInit() {
+  this.loader = true;
+  this.route.params
+    .switchMap((params: Params) => this._ms.getMovie(params['id']))
+    .subscribe((data: any) => {
+      if( data.success == true ){
+        this.movie = data.movie;
+      }
+      this.loader = false;
+    });
+}
 
 }
+
+// deleteAdUnit(id) {
+//   this.router.navigate(['delete']);
+// }

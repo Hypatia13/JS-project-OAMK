@@ -7,60 +7,52 @@ import { Movie } from '../components/movies/movie';
 
 @Injectable()
 export class MoviesService {
+constructor( private _http: Http ) {
+}
 
-	constructor( private _http: Http ) {
+// baseUrl = 'https://stark-wildwood-54839.herokuapp.com/api/movies';
+baseUrl = 'http://localhost:3000/api/movies';
 
-	}
-  baseUrl = 'https://stark-wildwood-54839.herokuapp.com/api/movies';
-	// baseUrl = 'http://localhost:3000/api/movies';
+responseData: any;
+getMovies(): Observable<Movie[]> {
+  return this._http.get( this.baseUrl ).map( res => res.json() );
+}
 
-	responseData: any;
+getMovie( id: string ): Observable<Movie> {
+  return this._http.get( this.baseUrl + '/' + id ).map( res => res.json() );
+}
 
-	getMovies(): Observable<Movie[]> {
+postMovieWithFile (url: string, postData: any, files: File[]) {
+    let headers = new Headers();
+    let formData:FormData = new FormData();
+    formData.append('poster', files[0], files[0].name);
 
-		return this._http.get( this.baseUrl ).map( res => res.json() );
+    if(postData !=="" && postData !== undefined && postData !==null){
+      for (var property in postData) {
+          if (postData.hasOwnProperty(property)) {
+              formData.append(property, postData[property]);
+          }
+      }
+    }
+    var returnReponse = new Promise((resolve, reject) => {
+      this._http.post(this.baseUrl + url, formData, {
+        headers: headers
+      }).subscribe(
+          res => {
+            this.responseData = res.json();
+            resolve(this.responseData);
+          },
+          error => {
+            reject(error);
+          }
+      );
+    });
+    return returnReponse;
+}
 
-	}
-
-	getMovie( id: string ): Observable<Movie> {
-
-		return this._http.get( this.baseUrl + '/' + id ).map( res => res.json() );
-
-	}
-
-	postMovieWithFile (url: string, postData: any, files: File[]) {
-
-	    let headers = new Headers();
-	    let formData:FormData = new FormData();
-	    formData.append('poster', files[0], files[0].name);
-	    // For multiple files
-	    // for (let i = 0; i < files.length; i++) {
-	    //     formData.append(`files[]`, files[i], files[i].name);
-	    // }
-
-	    if(postData !=="" && postData !== undefined && postData !==null){
-	      for (var property in postData) {
-	          if (postData.hasOwnProperty(property)) {
-	              formData.append(property, postData[property]);
-	          }
-	      }
-	    }
-	    var returnReponse = new Promise((resolve, reject) => {
-	      this._http.post(this.baseUrl + url, formData, {
-	        headers: headers
-	      }).subscribe(
-	          res => {
-	            this.responseData = res.json();
-	            resolve(this.responseData);
-	          },
-	          error => {
-	            reject(error);
-	          }
-	      );
-	    });
-	    return returnReponse;
-
-	}
+// delMovie( id: string ) {
+//   return this._http.get(`${this.baseUrl}/delete/${id}`);
+// }
 
 
 }

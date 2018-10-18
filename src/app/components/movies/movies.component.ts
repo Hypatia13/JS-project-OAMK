@@ -9,30 +9,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-	constructor( private _ms:MoviesService, private router: Router ) {
-	}
+constructor( private _ms:MoviesService, private router: Router ) {
+}
 
-	movies: any = [];
-	loader: boolean = false;
-	ngOnInit() {
-		this.loader = true;
-		this._ms.getMovies().subscribe( ( data: any ) => {
-			if( data.success == true ){
-				console.log(data.movies);
-				this.movies = data.movies;
-			}
-			this.loader = false;
-		} );
-	}
+movies: any = [];
+loader: boolean = false;
+ngOnInit() {
+  this.loader = true;
+  this._ms.getMovies().subscribe( ( data: any ) => {
+    if( data.success == true ){
+      console.log(data.movies);
+      this.movies = data.movies;
+    }
+    this.loader = false;
+  } );
+}
 
-	getMovie( movie: Movie ) {
-		console.log(movie);
-		this.router.navigate(['details', movie._id]);
-	}
+getMovie( movie: Movie ) {
+  console.log(movie);
+  this.router.navigate(['details', movie._id]);
+}
 
-	addMoviePage() {
-		this.router.navigate(['create']);
-	}
+addMoviePage() {
+  this.router.navigate(['create']);
+}
 
 
 

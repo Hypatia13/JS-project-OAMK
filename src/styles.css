@@ -25,7 +25,13 @@ body {
 	padding-right: 11%;
 }
 
+.jumbotron h1 {
+  color: darkred;
+}
 
+.page-header {
+  color: darkred;
+}
 
 /* --------------------------
 Hero Image / Title Styles
@@ -92,6 +98,10 @@ Navbar and Navigation Styles / Overrides
 
 .dropdown.open .dropdown-menu li a {
 	transition: 0.5s ease-in-out;
+}
+
+.navbar-nav li a{
+  color: darkred !important;
 }
 
 /*.dropdown.open .dropdown-menu li a:hover {
@@ -196,35 +206,12 @@ footer p {
 	padding-bottom: 20px;
 }
 
-footer .social-media-icons {
-	float: right;
-}
-
-footer .social-media-icons i {
-	font-size: 24px;
-	color: #999;
-	transition: 0.5s ease-in-out;
-}
-
-footer .social-media-icons a:first-child {
-	margin-right: 20px;
-}
-
-footer .social-media-icons a:last-child:hover i {
-	color: #af0b0c;
-}
-
-footer .social-media-icons a:first-child:hover i {
-	color: #333;
-}
-
-
 /* My custom css */
 .myLoader {
     position: relative;
     color: rgba(0, 0, 0, .3);
     font-size: 5em;
-    background-color: #3498db;
+    background-color: darkred;
 }
 .myLoader:before {
     content: attr(data-text);

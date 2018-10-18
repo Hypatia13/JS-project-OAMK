@@ -12,21 +12,21 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  isOpen: boolean = false;
-  isCollapse: boolean = false;
-  navbarHeight: string ="1px";
+isOpen: boolean = false;
+isCollapse: boolean = false;
+navbarHeight: string ="1px";
 
-  toggleClass() {
-  	this.isOpen = !this.isOpen;
-  }
+toggleClass() {
+  this.isOpen = !this.isOpen;
+}
 
-  colapseMenuBar(){
-    this.isCollapse = false;
-  }
+colapseMenuBar(){
+  this.isCollapse = false;
+}
 
-  toggleMobileNav() {
-  	this.isCollapse = !this.isCollapse;
-  	this.navbarHeight = "";
+toggleMobileNav() {
+  this.isCollapse = !this.isCollapse;
+  this.navbarHeight = "";
   }
 
 }

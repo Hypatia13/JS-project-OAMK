@@ -11,8 +11,8 @@ export class MoviesService {
 	constructor( private _http: Http ) {
 
 	}
-
-	baseUrl = 'http://localhost:3000/api/movies';
+  baseUrl = 'https://stark-wildwood-54839.herokuapp.com/api/movies';
+	// baseUrl = 'http://localhost:3000/api/movies';
 
 	responseData: any;
 

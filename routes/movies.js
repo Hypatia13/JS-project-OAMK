@@ -13,34 +13,16 @@ const storage = multer.diskStorage({
     cb(null, dir + '/../uploads/movies/');
   },
   filename: function (req, file, cb) {
-    //cb(null, Date.now() + file.originalname);
     cb(null, file.originalname);
   }
 })
 
 const upload = multer({ storage: storage });
-const cpUpload = upload.fields([{ name: 'poster', maxCount: 1 } /* , { name: 'hero_img', maxCount: 1}*/  ]);
+const cpUpload = upload.fields([{ name: 'poster', maxCount: 1 }  ]);
 
-
-// Get all tasks
 router.get('/movies', function( req, res, next ) {
 
-	/*Movie.findAsync({}, {}, { skip: 0, limit: 6 } )
-	.then( function( movies ) {
-		res.json( {success:true, movies:movies} );
-	} )
-	.catch( next )
-	.error( console.error );*/
-
   var query = Movie.find({ });
-  
-  /*query.select('title description main_characters');
-  query.skip(0);
-  query.where('main_characters').in(['Yoda', 'talking']);
-  query.sort('_id'); // -_id to reverse sort
-  query.limit(0);*/
-  //query.count();
-
   query.exec(function (err, docs) {
   if (err) return res.json(err);
     res.json( {success:true, movies:docs} );
@@ -70,16 +52,13 @@ router.post('/movies/',  cpUpload, function( req, res, next ){
 	m.description = req.body.description;
 	m.poster = req.files.poster[0].filename;
 	m.hero_image = 'death_star_image.jpg';
-	
-  //console.log(typeof req.body.actors)
+
   actors = req.body.actors.split(",");
    console.log(m);
    for(var i=0; i < actors.length; i++){
       let actor = actors[i];
       m.main_characters.push(actor);
    }
-
-  //res.json(m);
 
   m.saveAsync()
   .then(function(movie) {

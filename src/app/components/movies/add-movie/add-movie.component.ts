@@ -11,7 +11,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   templateUrl: './add-movie.component.html',
   styleUrls: ['./add-movie.component.css']
 })
-export class AddMovieComponent implements OnInit { 
+export class AddMovieComponent implements OnInit {
 
 	constructor( private _ms:MoviesService, private _fm:FlashMessagesService, private router: Router, private fb: FormBuilder ) {
 
@@ -133,7 +133,7 @@ export class AddMovieComponent implements OnInit {
 			this._ms.postMovieWithFile('', this.movie, file).then( result => {
 
 				this.loader = false;
-				
+
 		        console.log(result);
 		        this._fm.show('Movie successfully saved.', {cssClass:'alert-success', timeout:3000});
 		        this.router.navigate(['movies'])
@@ -142,12 +142,12 @@ export class AddMovieComponent implements OnInit {
 
 		    	this.loader = false;
 		    	this._fm.show('Something went wrong! Please try again.', {cssClass:'alert-danger', timeout:3000});
-		    
+
 		    });
 
 		}
 
-		
+
 
 	}
 

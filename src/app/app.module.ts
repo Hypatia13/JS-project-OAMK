@@ -20,7 +20,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 
 
 const appRoutes: Routes = [
-  // { path:"", component:HomeComponent },
+  { path:"", component:HomeComponent },
   { path:"movies", component:MoviesComponent },
   { path:"create", component:AddMovieComponent },
   { path:"edit/:id", component:EditMovieComponent },

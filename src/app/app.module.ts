@@ -16,10 +16,11 @@ import { MovieDetailsComponent } from './components/movies/movie-details/movie-d
 import { ContactComponent } from './components/contact/contact.component';
 import { MoviesService } from './services/movies.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 
 const appRoutes: Routes = [
-  { path:"", component:HomeComponent },
+  // { path:"", component:HomeComponent },
   { path:"movies", component:MoviesComponent },
   { path:"create", component:AddMovieComponent },
   { path:"edit/:id", component:EditMovieComponent },
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     EditMovieComponent,
     MovieDetailsComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,

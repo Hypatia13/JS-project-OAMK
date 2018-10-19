@@ -1,3 +1,8 @@
 .form-group a {
   color: darkred;
 }
+
+.container {
+  margin: auto;
+  width: 500px;
+}
